@@ -4,7 +4,7 @@ import "./App.css";
 
 function App() {
   return (
-    <section>
+    <section className="grid gap-2 md:grid-cols-2 md:items-center md:text-left">
       <div>
         <a href="https://traditioninaction.org">
           <img
@@ -15,7 +15,7 @@ function App() {
         </a>
       </div>
       <div>
-        <h1 className="bg-blue-500">St Ignatius</h1>
+        <h1 className="mb-2 text-3xl font-medium">St Ignatius</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur,
           odit. Id vel dolorum debitis deserunt cupiditate numquam excepturi
