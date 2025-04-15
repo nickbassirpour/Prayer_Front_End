@@ -65,26 +65,38 @@ export default function Navbar() {
           >
             <div className="fixed inset-0 bg-black/50" />
           </TransitionChild>
+          <TransitionChild
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0 scale-95"
+            enterTo="opacity-100 scale-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100 scale-100"
+            leaveTo="opacity-0 scale-95"
+          >
+            <DialogPanel>
+              <div className="fixed inset-y-0 left-0 w-64 bg-white shadow-md p-4">
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="mb-4"
+                >
+                  <XMarkIcon className="h-6 w-6 text-gray-700" />
+                </button>
 
-          <DialogPanel>
-            <div className="fixed inset-y-0 left-0 w-64 bg-white shadow-md p-4">
-              <button onClick={() => setMobileMenuOpen(false)} className="mb-4">
-                <XMarkIcon className="h-6 w-6 text-gray-700" />
-              </button>
-
-              <nav className="space-y-4">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="block text-gray-800"
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </nav>
-            </div>
-          </DialogPanel>
+                <nav className="space-y-4">
+                  {navigation.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="block text-gray-800"
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+            </DialogPanel>
+          </TransitionChild>
         </Dialog>
       </Transition>
     </header>
